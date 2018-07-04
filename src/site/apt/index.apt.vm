@@ -1,0 +1,88 @@
+            ------
+            Rothsmith Test Utilities
+            ------
+            Doug Rothauser
+            ------
+            12/27/2012
+
+Rothsmith Test Utilities
+
+  The purpose of this project is to provide utilities for running JUnit and 
+  integration/functional tests.  
+
+%{toc|section=1|fromDepth=2}
+
+* Maven Dependency
+
++--------------------------------------+
+<dependency>
+   <groupId>com.rothsmith</groupId>
+   <artifactId>fcci-testutils</artifactId>
+   <version>{${project.version}}</version>
+   <scope>test</scope>
+</dependency>
++--------------------------------------+
+
+* FTPS Test Server
+  
+		Use the FtpsTestServer class to start up a local test instance of a FTPS server (FTP over SSL). 
+  
+		Setting up the test FTPS server in a Junit class:
+
+%{include|source=src/test/java/com/rothsmith/test/ftp/FtpsTestServerTest.java|snippet=#ftps-server-setup}
+
+		Tearing down the test FTPS server in a Junit class:
+
+%{include|source=src/test/java/com/rothsmith/test/ftp/FtpsTestServerTest.java|snippet=#ftps-server-teardown}
+
+* SFTP Test Server for Unit Testing
+  
+		Use the SFtpTestServer class to start up a local test instance of a SFTP server (FTP over SSH). 
+  
+		Setting up the test SFTP server in a Junit class:
+
+%{include|source=src/test/java/com/rothsmith/test/ftp/SFtpTestServerTest.java|snippet=#sftp-server-setup}
+
+		Tearing down the test SFTP server in a Junit class:
+
+%{include|source=src/test/java/com/rothsmith/test/ftp/SFtpTestServerTest.java|snippet=#sftp-server-teardown}
+
+* Standalone SFTP Test Server 
+  
+		The SFtpTestServer can be run as a standalone Java application to spin up a simple SFTP server for testing.
+		
+		Usage:
+		
++---
+usage: com.rothsmith.test.ftp.SFtpTestServer
+ -h,--host <host>   Server host (optional - default=localhost)
+ -p,--host <port>   Server port (optional - default=22)
+ -u,--user <user>   Server user id (optional - default=rothsmithtest)
++---		
+
++---		
+java -cp .;rothsmith-testutils.jar;lib/* com.rothsmith.test.ftp.SFtpTestServer -h testserver -p 2222 
++---
+  
+* Integration Test Utilities
+   
+** IntegrationTestUtils.fetchJacocoAgent()
+  
+	Use the com.rothsmith.test.integration.IntegrationTestUtils.fetchJacocoAgent() static method 
+	to initialize  the JaCoCo JVM agent string for use by integration tests. This will 
+	allow your integration tests to capture coverage metrics. 
+
+%{include|source=src/test/java/com/rothsmith/test/integration/IntegrationTestUtilsTest.java|snippet=#jacoco-init}
+   
+** IntegrationTestUtilsTest.testRunIntegrationTest()
+		
+	Use the com.rothsmith.test.integration.IntegrationTestUtils.fetchJacocoAgent() static method 
+	to easily run a DOS or Windows command.  
+			
+	The following is a complete example of how to initialize and run an ORSYP JobRunner	command: 
+
+%{include|source=src/test/java/com/rothsmith/test/integration/IntegrationTestUtilsTest.java|snippet=#runIntegrationTest}
+  
+		[]
+  
+	[]
