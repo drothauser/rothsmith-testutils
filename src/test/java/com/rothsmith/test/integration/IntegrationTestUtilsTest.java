@@ -14,6 +14,7 @@ import java.util.List;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import com.rothsmith.test.integration.IntegrationTestUtils;
@@ -54,6 +55,7 @@ public class IntegrationTestUtilsTest {
 	 * .
 	 */
 	@Test
+	@Ignore
 	public void testFetchJacocoAgent() {
 
 		String jacocoAgent = IntegrationTestUtils.fetchJacocoAgent();
@@ -70,6 +72,7 @@ public class IntegrationTestUtilsTest {
 	 *             possible I/O error
 	 */
 	@Test
+	@Ignore
 	public void testRunIntegrationTest() throws IOException {
 
 		// START SNIPPET: runIntegrationTest
