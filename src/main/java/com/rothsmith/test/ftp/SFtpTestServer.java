@@ -17,6 +17,7 @@ import org.apache.commons.cli.Option;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sshd.SshServer;
 import org.apache.sshd.common.NamedFactory;
@@ -48,7 +49,7 @@ public class SFtpTestServer {
 	/**
 	 * Default SFTP/SSH port.
 	 */
-	public static final int DEFAULT_PORT = 22;
+	public static final int DEFAULT_PORT = 2222;
 
 	/**
 	 * Default SFTP server host.
@@ -58,7 +59,7 @@ public class SFtpTestServer {
 	/**
 	 * Default SFTP server host.
 	 */
-	public static final String DEFAULT_USER = "fccitest";
+	public static final String DEFAULT_USER = "sftptest";
 
 	/**
 	 * {@link SshServer} instance for testing SFTP.
@@ -140,7 +141,7 @@ public class SFtpTestServer {
 		namedFactoryList.add(new SftpSubsystem.Factory());
 		sshd.setSubsystemFactories(namedFactoryList);
 
-		String defaultHomeDir = FileUtils.getTempDirectoryPath() + "sftp-test";
+		String defaultHomeDir = FilenameUtils.normalize(FileUtils.getTempDirectoryPath() + File.separator + "sftp-test");
 		try {
 			FileUtils.forceMkdir(new File(defaultHomeDir));
 			LOGGER.info("Created home directory: " + defaultHomeDir);
