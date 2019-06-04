@@ -1,17 +1,25 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<artifactId>rothsmith-common</artifactId>
 		<groupId>net.rothsmith</groupId>
-		<version>1.0.0-SNAPSHOT</version>
+		<artifactId>rothsmith-parent</artifactId>
+		<version>1.0.0</version>
 	</parent>
 	<artifactId>rothsmith-testutils</artifactId>
-
+	<version>${revision}${changelist}</version>
 
 	<name>rothsmith-testutils</name>
 	<url>http://cidev.rothsmith-group.com/sites/rothsmith-testutils/</url>
 	<description>Helper clasess for Junit and Integration tests.</description>
+
+	<properties>
+		<revision>1.0.0</revision>
+		<changelist>-SNAPSHOT</changelist>
+		<checkstyle.config>${basedir}/checkstyle_checks.xml</checkstyle.config>
+		<pmd.rulesfile>${basedir}/pmdrules.xml</pmd.rulesfile>
+	</properties>
 
 	<ciManagement>
 		<system>Jenkins</system>
@@ -47,7 +55,7 @@
 		<dependency>
 			<groupId>com.rothsmith</groupId>
 			<artifactId>rothsmith-props</artifactId>
-			<version>1.2.0-SNAPSHOT</version>
+			<version>[1.0.0,)</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.mina</groupId>
