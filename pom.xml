@@ -53,7 +53,7 @@
 			<version>1.0.6</version>
 		</dependency>
 		<dependency>
-			<groupId>com.rothsmith</groupId>
+			<groupId>net.rothsmith</groupId>
 			<artifactId>rothsmith-props</artifactId>
 			<version>[1.0.0,)</version>
 		</dependency>
