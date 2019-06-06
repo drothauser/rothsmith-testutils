@@ -55,7 +55,7 @@
 		<dependency>
 			<groupId>net.rothsmith</groupId>
 			<artifactId>rothsmith-props</artifactId>
-			<version>[1.0.0,)</version>
+			<version>[1.0.0-SNAPSHOT,)</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.mina</groupId>
