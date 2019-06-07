@@ -32,6 +32,7 @@
     <changelist>-SNAPSHOT</changelist>
     <checkstyle.config>${basedir}/checkstyle_checks.xml</checkstyle.config>
     <pmd.rulesfile>${basedir}/pmdrules.xml</pmd.rulesfile>
+    <depencency-suffix>-SNAPSHOT</depencency-suffix>
   </properties>
   <dependencies>
     <dependency>
@@ -50,7 +51,7 @@
     <dependency>
       <groupId>net.rothsmith</groupId>
       <artifactId>rothsmith-props</artifactId>
-      <version>[1.0.0,)</version>
+      <version>[1.0.0${depencency-suffix}]</version>
     </dependency>
     <dependency>
       <groupId>org.apache.mina</groupId>
