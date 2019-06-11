@@ -9,7 +9,7 @@
   </parent>
   <groupId>net.rothsmith</groupId>
   <artifactId>rothsmith-testutils</artifactId>
-  <version>1.0.1-SNAPSHOT</version>
+  <version>1.0.0-100</version>
   <name>rothsmith-testutils</name>
   <description>Helper clasess for Junit and Integration tests.</description>
   <url>http://cidev.rothsmith-group.com/sites/rothsmith-testutils/</url>
@@ -28,9 +28,7 @@
     <url>http://ec2-54-69-215-107.us-west-2.compute.amazonaws.com:8081/nexus/content/sites/site/rothsmith-testutils</url>
   </ciManagement>
   <properties>
-    <rothsmith-dependency-version-dev>(,1.0.1-SNAPSHOT]</rothsmith-dependency-version-dev>
-    <rothsmith-dependency-version-release>(,1.0.1-][1.0.1-,)</rothsmith-dependency-version-release>
-    <revision>1.0.1</revision>
+    <revision>1.0.0</revision>
     <checkstyle.config>${basedir}/checkstyle_checks.xml</checkstyle.config>
     <pmd.rulesfile>${basedir}/pmdrules.xml</pmd.rulesfile>
   </properties>
@@ -38,7 +36,6 @@
     <dependency>
       <groupId>net.rothsmith</groupId>
       <artifactId>rothsmith-props</artifactId>
-      <version>${rothsmith-dependency-version}</version>
     </dependency>
     <dependency>
       <groupId>org.slf4j</groupId>

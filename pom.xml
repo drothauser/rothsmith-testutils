@@ -16,8 +16,6 @@
 
 	<properties>
 		<revision>1.0.0</revision>
-		<rothsmith-dependency-version-dev>(,${revision}-SNAPSHOT]</rothsmith-dependency-version-dev>
-		<rothsmith-dependency-version-release>(,${revision}-][${revision}-,)</rothsmith-dependency-version-release>
 		<checkstyle.config>${basedir}/checkstyle_checks.xml</checkstyle.config>
 		<pmd.rulesfile>${basedir}/pmdrules.xml</pmd.rulesfile>
 	</properties>
@@ -43,7 +41,6 @@
 		<dependency>
 			<groupId>net.rothsmith</groupId>
 			<artifactId>rothsmith-props</artifactId>
-			<version>${rothsmith-dependency-version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.slf4j</groupId>
